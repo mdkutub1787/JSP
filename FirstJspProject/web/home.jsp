@@ -8,8 +8,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
-        <%= new java.util.Date() %> 
-        <a href="studentaddform.jsp">Add Student</a>
+        <h2>
+            <%= new java.util.Date() %> <br>
+            <a href="studentaddform.jsp">Add Student</a><br>
+            <a href="viewallstudent.jsp">View All Student</a>
+        </h2>
     </body>
 </html>
