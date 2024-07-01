@@ -9,13 +9,13 @@
     </head>
     <body>
         <h1>Student Form</h1>
-        <<form action="saveStudent.jsp" method="post">
-            Name: <<input type="text" name="name">
-            Email: <<input type="email" name="email">
-            Address: <<input type="text" name="address">
-            Cell No: <<input type="text" name="cell">
+        <form action="saveStudent.jsp" method="post">
+            Name: <input type="text" name="name">
+            Email: <input type="email" name="email">
+            Address: <input type="text" name="address">
+            Cell No: <input type="text" name="cell">
 
-            <<input type="submit" value="Save">
+            <input type="submit" value="Save">
 
 
         </form>

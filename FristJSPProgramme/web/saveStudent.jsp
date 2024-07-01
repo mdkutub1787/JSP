@@ -6,10 +6,10 @@
 int i=StudentDao.saveStudent(s);
 
 if(i>0){
-    respons.sendRedirect("success.jsp");
+    response.sendRedirect("success.jsp");
     }
     else{
-     respons.sendRedirect("error.jsp");
+     response.sendRedirect("error.jsp");
     }
 
 %>

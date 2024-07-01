@@ -10,6 +10,6 @@
     <body>
         
         <%= new java.util.Date() %> 
-        <a href="success.jsp">Add Student</a>
+        <a href="studentaddform.jsp">Add Student</a>
     </body>
 </html>
