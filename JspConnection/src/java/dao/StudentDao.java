@@ -15,7 +15,7 @@ public class StudentDao {
     static ResultSet rs;
     static String sql = "";
 
-    public static int Student(Student s) {
+    public static int saveStudent(Student s) {
 
         int status = 0;
         sql = "insrt into student(name,email,address,cell) values(?,?,?,?)";
