@@ -15,10 +15,11 @@ public class StudentDao {
     static ResultSet rs;
     static String sql = "";
 
-    public static int saveStudent(Student s) {
+    public static int saveData(Student s) {
 
         int status = 0;
-        sql = "insrt into student(name,email,address,cell) values(?,?,?,?)";
+        sql = "insrt into student(name,email,address,cell)"
+                + "values(?,?,?,?)";
         try {
             ps = DBUtil.getCon().prepareStatement(sql);
             ps.setString(1, s.getName());

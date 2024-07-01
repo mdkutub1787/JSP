@@ -1,7 +1,9 @@
+
 package model;
 
-public class Student {
 
+public class Student {
+    
     private int id;
     private String name;
     private String email;
@@ -65,5 +67,6 @@ public class Student {
     public void setCell(String cell) {
         this.cell = cell;
     }
-
+    
+    
 }

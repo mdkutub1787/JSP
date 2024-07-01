@@ -8,9 +8,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-
         <h1 style="color: red">Data Save Unsuccessful</h1>
         <%@include file="studentaddform.jsp" %>
-
     </body>
 </html>

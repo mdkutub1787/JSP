@@ -8,12 +8,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-<<<<<<<< Updated upstream:FirstJspProject/web/success.jsp
         <h1 style="color: green">Data Save Successful</h1>
         <%@include file="studentaddform.jsp"%>
-========
-       <h1 style="color: red">Data Save Unsuccessful</h1>
-        <%@include file="studentaddform.jsp" %>
->>>>>>>> Stashed changes:JSPTest/web/error.jsp
     </body>
 </html>
