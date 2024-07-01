@@ -10,10 +10,10 @@
     <body>
         <h1>Student Form</h1>
         <form action="saveStudent.jsp" method="post">
-            Name: <input type="text" name="name">
-            Email: <input type="email" name="email">
-            Address: <input type="text" name="address">
-            Cell No: <input type="text" name="cell">
+            Name: <input type="text" name="name"><br>
+            Email: <input type="email" name="email"><br>
+            Address: <input type="text" name="address"><br>
+            Cell No: <input type="text" name="cell"><br>
 
             <input type="submit" value="Save">
 
