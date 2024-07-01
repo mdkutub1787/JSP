@@ -8,7 +8,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a href="studentaddform.jsp">Add Data</a>
+        <h1>  <a href="studentaddform.jsp">Add Data</a></h1>
         <h1>Hello Student </h1>
     </body>
 </html>
