@@ -1,8 +1,4 @@
-<%-- 
-    Document   : kutub
-    Created on : Jun 30, 2024, 5:57:53 PM
-    Author     : Administrator
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,6 +8,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello Kutub Uddin !</h1>
+        
+        <h1 style="color: green">Data Save Successful</h1>
+        <%@include file="studentaddform.jsp" %>
     </body>
 </html>

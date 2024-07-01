@@ -8,8 +8,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
-        <%= new java.util.Date() %> 
-        <a href="success.jsp">Add Student</a>
+       <h1 style="color: red">Data Save Unsuccessful</h1>
+        <%@include file="studentaddform.jsp" %>
     </body>
 </html>

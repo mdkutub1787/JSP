@@ -17,31 +17,23 @@ public class StudentDao {
     static String sql = "";
 
     public static int saveStudent(Student s) {
-
         int status = 0;
-
-        sql = "insert into student(name, email, address, cell) "
-                + "values(?,?,?,?)";
-
+        sql = "insert into employee(name,address)values(?,?)";
         try {
             ps = DBUtil.getCon().prepareStatement(sql);
-
             ps.setString(1, s.getName());
-            ps.setString(2, s.getEmail());
-            ps.setString(3, s.getAddress());
-            ps.setString(4, s.getCell());
-
+            ps.setString(2, s.getAddress());
+            
             status = ps.executeUpdate();
             System.out.println(status);
 
             ps.close();
             DBUtil.getCon().close();
-
         } catch (SQLException ex) {
             Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         return status;
+
     }
 
 }
