@@ -4,7 +4,7 @@
 
 <% 
 
-int i=StudentDao.saveData(s);
+int i=StudentDao.saveStudent(s);
 
 if(i>0){
     response.sendRedirect("success.jsp");
