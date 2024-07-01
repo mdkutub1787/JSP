@@ -10,15 +10,15 @@ import util.DBUtil;
 
 public class StudentDao {
 
-    static Student s = new Student();
+    
     static PreparedStatement ps;
     static ResultSet rs;
     static String sql = "";
 
-    public static int saveData(Student s) {
+    public static int saveStudent(Student s) {
 
         int status = 0;
-        sql = "insrt into student(name,email,address,cell)"
+        sql = "insert into student(name,email,address,cell)"
                 + "values(?,?,?,?)";
         try {
             ps = DBUtil.getCon().prepareStatement(sql);
