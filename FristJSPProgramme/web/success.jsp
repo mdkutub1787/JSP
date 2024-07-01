@@ -8,10 +8,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-<<<<<<< Updated upstream
-        <h1 style="color: red">Data Save Unsuccessful</h1>
-        <%@include file="studentaddform.jsp" %>
-=======
 <<<<<<<< HEAD:FristJSPProgramme/web/success.jsp
         <h1 style="color: green">Data Save Successful</h1>
         <%@include file="employeeaddform.jsp" %>
@@ -19,6 +15,5 @@
         <h1 style="color: red">Data Save Unsuccessful</h1>
         <%@include file="studentaddform.jsp" %>
 >>>>>>>> 8dcd71c839e57efd51631ade61b807fa288db2c8:JspConnection/web/error.jsp
->>>>>>> Stashed changes
     </body>
 </html>
