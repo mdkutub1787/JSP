@@ -21,7 +21,7 @@ public class StudentDao {
 
     public static int saveStudent(Student s) {
         int status = 0;
-        sql = "insert into employee(name,address)values(?,?)";
+        sql = "insert into student(name,address)values(?,?)";
         try {
             ps = DBUtil.getCon().prepareStatement(sql);
             ps.setString(1, s.getName());
@@ -59,11 +59,26 @@ public class StudentDao {
             rs.close();
             ps.close();
             DBUtil.getCon().close();
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         return stList;
+
+    }
+
+    public static void deleteStudent(Student s) {
+        sql = "delete from student where id=?";
+        try {
+            ps = DBUtil.getCon().prepareStatement(sql);
+            ps.setInt(1, s.getId());
+            ps.executeUpdate();
+
+            ps.close();
+            DBUtil.getCon().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 
