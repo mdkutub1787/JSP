@@ -25,7 +25,7 @@ public class CustomerDao {
         try {
             ps = DBUtil.getCon().prepareStatement(sql);
             ps.setString(1, c.getName());
-            ps.setString(2, c.getName());
+            ps.setString(2, c.getAddress());
             ps.setString(3, c.getPhone());
 
             status = ps.executeUpdate();
