@@ -84,4 +84,50 @@ public class CustomerDao {
 
     }
 
+    public static void updateCustomer(Customer c) {
+        sql = "update customer  set name=?,address=?,phone=? "
+                + "where id=?";
+        try {
+            ps = DBUtil.getCon().prepareStatement(sql);
+            ps.setString(1, c.getName());
+            ps.setString(2, c.getAddress());
+            ps.setString(3, c.getPhone());
+            ps.setInt(4, c.getId());
+
+            ps.executeUpdate();
+
+            ps.close();
+            DBUtil.getCon().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CustomerDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public static Customer getById(int id) {
+        Customer c = null;
+
+        sql = "select * from customer where id=?";
+        try {
+            ps = DBUtil.getCon().prepareStatement(sql);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                c = new Customer(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("address"),
+                        rs.getString("phone")
+                );
+            }
+
+            rs.close();
+            ps.close();
+            DBUtil.getCon().close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CustomerDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return c;
+    }
 }

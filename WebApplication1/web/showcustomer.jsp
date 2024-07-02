@@ -28,7 +28,7 @@ request.setAttribute("List",list);
                 <td>${e.getAddress()}</td>
                 <td>${e.getPhone()}</td>
                 <td>
-                    <a href="#">Edit</a>
+                    <a href="updatecustomerform.jsp?id=${e.getId()}">Edit</a>
                     <a href="deletecustomer.jsp?id=${e.getId()}">Delete</a>
                 </td>
             </tr> 
