@@ -12,7 +12,7 @@
         <form action="savecustomer.jsp"method="post">
             Name:<input type="text" name="name"> <br><br>
             Address<input type="text" name="name"> <br><br>
-            Phone:<input type="number" name="name"> <br><br>
+            Phone:<input type="text" name="name"> <br><br>
 
             <input type="submit" value="Save Data">
 
