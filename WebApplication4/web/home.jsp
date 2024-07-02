@@ -1,6 +1,6 @@
 <%-- 
     Document   : home
-    Created on : Jul 1, 2024, 7:34:21 AM
+    Created on : Jul 2, 2024, 9:20:53 AM
     Author     : MD KUTUB UDDIN
 --%>
 
@@ -12,8 +12,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-       <%= new java.util.Date() %><br> 
-       <a href="studentaddform.jsp">Add Student</a><br>
-       <a href="viewstudent.jsp">View All Student</a>
+        <h1><a href="saveemployeeaddform.jsp"> Add Employee</a></h1> 
+        <h1><a href="viewemployee.jsp"> View Employee</a></h1>
+        <h1>Hello Employee</h1>
     </body>
 </html>
