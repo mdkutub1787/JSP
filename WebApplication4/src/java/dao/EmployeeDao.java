@@ -84,4 +84,52 @@ public class EmployeeDao {
         }
     }
 
+    public static void updateEmployee(Employee e) {
+        sql = "update employee set name=?,email=?,address=?,cell=? where id=?";
+        try {
+            ps = DBUtil.getCon().prepareStatement(sql);
+            ps.setString(1, e.getName());
+            ps.setString(2, e.getEmail());
+            ps.setString(3, e.getAddress());
+            ps.setString(4, e.getCell());
+            ps.setInt(5, e.getId());
+
+            ps.executeUpdate();
+
+            ps.close();
+            DBUtil.getCon().close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EmployeeDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public static Employee getById(int id) {
+        Employee e = null;
+        sql = "select * from employee where id=?";
+        try {
+            ps = DBUtil.getCon().prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                e = new Employee(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("email"),
+                        rs.getString("address"),
+                        rs.getString("cell")
+                );
+
+            }
+            rs.close();
+            ps.close();
+            DBUtil.getCon().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EmployeeDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return e;
+
+    }
+
 }
