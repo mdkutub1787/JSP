@@ -30,7 +30,7 @@ request.setAttribute("list", list);
             }
             th, td {
                 padding: 10px;
-                text-align: left;
+                text-align: center;
             }
             th {
                 background-color: #4CAF50;
@@ -58,7 +58,7 @@ request.setAttribute("list", list);
 
             <thead>
                 <tr>
-                    <th colspan="6"><h2 style="text-align: center">Student List</h2></th>
+                    <th colspan="6"><h2>Student List</h2></th>
                 </tr>
                 <tr>                 
                     <th>ID</th>
