@@ -115,6 +115,7 @@ public class StudentDao {
         sql = "select * from student where id=?";
         try {
             ps = DBUtil.getCon().prepareStatement(sql);
+            ps.setInt(1, id);
             rs = ps.executeQuery();
 
             while (rs.next()) {
