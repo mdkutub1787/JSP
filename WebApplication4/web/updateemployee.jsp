@@ -5,6 +5,6 @@
 <%
 EmployeeDao.updateEmployee(e);
 
-response.sendRedirect("success.jsp");
+response.sendRedirect("viewemployee.jsp");
    
 %>
