@@ -110,6 +110,7 @@ public class EmployeeDao {
         sql = "select * from employee where id=?";
         try {
             ps = DBUtil.getCon().prepareStatement(sql);
+            ps.setInt(1, id);
             rs = ps.executeQuery();
 
             while (rs.next()) {
