@@ -11,7 +11,7 @@ Student s=StudentDao.getById(Integer.parseInt(id));
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Student Update Form</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
