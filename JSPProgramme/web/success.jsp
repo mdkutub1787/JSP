@@ -1,6 +1,6 @@
 <%-- 
-    Document   : home
-    Created on : Jul 3, 2024, 8:07:38 AM
+    Document   : success
+    Created on : Jul 3, 2024, 11:52:56 AM
     Author     : MD KUTUB UDDIN
 --%>
 
@@ -12,9 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-       <h2> <%= new java.util.Date() %></h2>
-       <a href="studentaddform.jsp">Add Student</a><br>
-        <a href="viewallstudent.jsp">View All Student</a>
-        <h1>Hello Student</h1>
+        <h1 style="color: green">Data Save Successful</h1>
+        <%@include file="studentaddform.jsp" %>
     </body>
 </html>
