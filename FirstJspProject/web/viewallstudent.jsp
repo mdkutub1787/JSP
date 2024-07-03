@@ -8,30 +8,78 @@ List<Student> list = StudentDao.viewAllStudent();
 request.setAttribute("list", list);
 %>
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Cell</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <c:forEach var="s" items="${list}">
-            <tr>
-                <td>${s.getId()}</td>
-                <td>${s.getName()}</td>
-                <td>${s.getEmail()}</td>
-                <td>${s.getAddress()}</td>
-                <td>${s.getCell()}</td>
-                <td>
-                    <a href="updatestudentform.jsp?id=${s.getId()}">Edit</a>
-                    <a href="deletestudent.jsp?id=${s.getId()}">Delete</a>
-                </td>
-            </tr>
-        </c:forEach>
-    </tbody>
-</table>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Student List</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+                margin: 0;
+                padding: 20px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+            table, th, td {
+                border: 1px solid #ddd;
+            }
+            th, td {
+                padding: 10px;
+                text-align: left;
+            }
+            th {
+                background-color: #4CAF50;
+                color: white;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            tr:hover {
+                background-color: #ddd;
+            }
+            a {
+                color: #4CAF50;
+                text-decoration: none;
+                margin-right: 10px;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Student List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Cell</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach var="s" items="${list}">
+                    <tr>
+                        <td>${s.getId()}</td>
+                        <td>${s.getName()}</td>
+                        <td>${s.getEmail()}</td>
+                        <td>${s.getAddress()}</td>
+                        <td>${s.getCell()}</td>
+                        <td>
+                            <a href="updatestudentform.jsp?id=${s.getId()}">Edit</a>
+                            <a href="deletestudent.jsp?id=${s.getId()}">Delete</a>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+    </body>
+</html>
