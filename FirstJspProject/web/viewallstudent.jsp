@@ -26,7 +26,7 @@ request.setAttribute("list", list);
                 margin-bottom: 20px;
             }
             table, th, td {
-                border: 1px solid #ddd;
+                border: 1px solid black;
             }
             th, td {
                 padding: 10px;
@@ -53,10 +53,14 @@ request.setAttribute("list", list);
         </style>
     </head>
     <body>
-        <h1 style="text-align: center">Student List</h1>
+
         <table>
+
             <thead>
                 <tr>
+                    <th colspan="6"><h2 style="text-align: center">Student List</h2></th>
+                </tr>
+                <tr>                 
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
