@@ -43,7 +43,7 @@ request.setAttribute("list", list);
                 background-color: #ddd;
             }
             a {
-                color: #4CAF50;
+                color: red;
                 text-decoration: none;
                 margin-right: 10px;
             }
@@ -53,7 +53,7 @@ request.setAttribute("list", list);
         </style>
     </head>
     <body>
-        <h1>Student List</h1>
+        <h1 style="text-align: center">Student List</h1>
         <table>
             <thead>
                 <tr>
@@ -74,7 +74,7 @@ request.setAttribute("list", list);
                         <td>${s.getAddress()}</td>
                         <td>${s.getCell()}</td>
                         <td>
-                            <a href="updatestudentform.jsp?id=${s.getId()}">Edit</a>
+                            <a href="updatestudentform.jsp?id=${s.getId()}" style="color:blueviolet">Edit</a>
                             <a href="deletestudent.jsp?id=${s.getId()}">Delete</a>
                         </td>
                     </tr>
