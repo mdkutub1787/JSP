@@ -31,14 +31,14 @@ public class EmployeeDao {
 
     }
 
-    public boolean deleteEmployee(int empid) {
+    public boolean deleteEmployee(int id) {
 
         Transaction t = null;
         Session s = HibernateUtil.getSessionFactory().openSession();
 
         try {
             t = s.beginTransaction();
-            Employee e = (Employee) s.load(Employee.class, new Integer(empid));
+            Employee e = (Employee) s.load(Employee.class, new Integer(id));
             s.delete(e);
             t.commit();
             return true;
@@ -91,15 +91,15 @@ public class EmployeeDao {
     }
     
     
-    public Employee getEmployeeById(int empid){
+    public Employee getEmployeeById(int id){
         
-    	System.out.println("Get employee by Id = " +empid+ "\n.....................");
+    	System.out.println("Get employee by Id = " +id+ "\n.....................");
         Session session = null;
         Employee e = null;
         try {
         	
             session = HibernateUtil.getSessionFactory().openSession();
-            e = (Employee) session.get(Employee.class, empid);
+            e = (Employee) session.get(Employee.class, id);
  
         } catch(Exception ex) {
             ex.printStackTrace();
