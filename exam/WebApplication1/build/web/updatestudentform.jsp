@@ -5,6 +5,7 @@
 String id = request.getParameter("id");
 Student s = StudentDao.getById(Integer.parseInt(id));
 String gender = s.getGender();  // Assuming the Student model has a getGender() method
+String subject = s.getSubject();  // Assuming the Student model has a getSubject() method
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -48,7 +49,8 @@ String gender = s.getGender();  // Assuming the Student model has a getGender() 
             }
             input[type="text"],
             input[type="email"],
-            input[type="submit"] {
+            input[type="submit"],
+            select {
                 padding: 10px;
                 margin-bottom: 15px;
                 border: 1px solid #ccc;
@@ -87,14 +89,20 @@ String gender = s.getGender();  // Assuming the Student model has a getGender() 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" value="<%=s.getEmail()%>">
 
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" value="<%=s.getAddress()%>">
-
                 <label>Gender:</label>
                 <div class="gender-group">
                     <label><input type="radio" name="gender" value="Male" <%= "Male".equals(gender) ? "checked" : "" %>> Male</label>
                     <label><input type="radio" name="gender" value="Female" <%= "Female".equals(gender) ? "checked" : "" %>> Female</label>
                 </div>
+
+                <label for="subject">Subject:</label>
+                <select id="subject" name="subject">
+                    <option value="Math" <%= "Math".equals(subject) ? "selected" : "" %>>Math</option>
+                    <option value="Science" <%= "Science".equals(subject) ? "selected" : "" %>>Science</option>
+                    <option value="English" <%= "English".equals(subject) ? "selected" : "" %>>English</option>
+                    <option value="History" <%= "History".equals(subject) ? "selected" : "" %>>History</option>
+                   
+                </select>
 
                 <input type="submit" value="Save">
             </form>

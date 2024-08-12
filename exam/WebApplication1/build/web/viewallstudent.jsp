@@ -64,8 +64,8 @@ request.setAttribute("list", list);
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Address</th>
                     <th>Gender</th>
+                    <th>Subject</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -75,8 +75,8 @@ request.setAttribute("list", list);
                         <td>${s.getId()}</td>
                         <td>${s.getName()}</td>
                         <td>${s.getEmail()}</td>
-                        <td>${s.getAddress()}</td>
                         <td>${s.getGender()}</td>
+                        <td>${s.getSubject()}</td>
                         <td>
                             <a href="updatestudentform.jsp?id=${s.getId()}" style="color:blueviolet">Edit</a>
                             <a href="deletestudent.jsp?id=${s.getId()}">Delete</a>

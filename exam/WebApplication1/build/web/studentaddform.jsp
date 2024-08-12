@@ -39,7 +39,8 @@
             }
             input[type="text"],
             input[type="email"],
-            input[type="submit"] {
+            input[type="submit"],
+            select {
                 padding: 10px;
                 margin-bottom: 15px;
                 border: 1px solid #ccc;
@@ -84,6 +85,15 @@
                     <label><input type="radio" name="gender" value="Male"> Male</label>
                     <label><input type="radio" name="gender" value="Female"> Female</label>
                 </div>
+                
+                <label for="subject">Subject:</label>
+                <select id="subject" name="subject">
+                    <option value="Math">Math</option>
+                    <option value="Science">Science</option>
+                    <option value="English">English</option>
+                    <option value="History">History</option>
+                    
+                </select>
                 
                 <input type="submit" value="Save">
             </form>
