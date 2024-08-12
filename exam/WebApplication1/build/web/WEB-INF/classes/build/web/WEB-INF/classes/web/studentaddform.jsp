@@ -88,10 +88,10 @@
                 
                 <label for="subject">Subject:</label>
                 <select id="subject" name="subject">
-                    <option value="Math">Math</option>
-                    <option value="Science">Science</option>
-                    <option value="English">English</option>
-                    <option value="History">History</option>
+                    <option value="Java">Java</option>
+                    <option value="Python">Python</option>
+                    <option value="Gave">Gave</option>
+                    <option value="Networking">Networking</option>
                     
                 </select>
                 

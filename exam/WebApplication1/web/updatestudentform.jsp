@@ -97,10 +97,10 @@ String subject = s.getSubject();  // Assuming the Student model has a getSubject
 
                 <label for="subject">Subject:</label>
                 <select id="subject" name="subject">
-                    <option value="Math" <%= "Math".equals(subject) ? "selected" : "" %>>Math</option>
-                    <option value="Science" <%= "Science".equals(subject) ? "selected" : "" %>>Science</option>
-                    <option value="English" <%= "English".equals(subject) ? "selected" : "" %>>English</option>
-                    <option value="History" <%= "History".equals(subject) ? "selected" : "" %>>History</option>
+                    <option value="Java" <%= "Java".equals(subject) ? "selected" : "" %>>Java</option>
+                    <option value="Python" <%= "Python".equals(subject) ? "selected" : "" %>>Python</option>
+                    <option value="Gave" <%= "Gave".equals(subject) ? "selected" : "" %>>Gave</option>
+                    <option value="Networking" <%= "Networking".equals(subject) ? "selected" : "" %>>Networking</option>
                    
                 </select>
 
