@@ -53,7 +53,9 @@
         </div>
         <h3>       
             <a href="studentaddform.jsp">Add Student</a><br>
-            <a href="viewallstudent.jsp">View All Student</a>
+            <a href="viewallstudent.jsp">View All Student</a><br>
+            <a href="customeraddform.jsp">Add Customer</a><br>
+            <a href="showcustomer.jsp">View All Customer</a>
         </h3>
     </div>
      </body>
