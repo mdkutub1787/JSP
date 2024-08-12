@@ -49,7 +49,7 @@
 <body>
     <div class="container">
         <div class="date">
-            <!--<h2> <%= new java.util.Date() %></h2>-->
+            <h2> <%= new java.util.Date() %></h2>
         </div>
         <h3>       
             <a href="studentaddform.jsp">Add Student</a><br>
