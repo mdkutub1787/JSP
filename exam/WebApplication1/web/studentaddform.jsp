@@ -4,99 +4,58 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Student Form</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f2f2f2;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-            }
-            .form-container {
-                background-color: #fff;
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                width: 300px;
-            }
-            h1 {
-                text-align: center;
-                margin-bottom: 20px;
-                font-size: 24px;
-                color: #333;
-            }
-            form {
-                display: flex;
-                flex-direction: column;
-            }
-            label {
-                margin-bottom: 5px;
-                font-weight: bold;
-                color: #333;
-            }
-            input[type="text"],
-            input[type="email"],
-            input[type="submit"],
-            select {
-                padding: 10px;
-                margin-bottom: 15px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                font-size: 14px;
-            }
-            input[type="submit"] {
-                background-color: #4CAF50;
-                color: white;
-                border: none;
-                cursor: pointer;
-                transition: background-color 0.3s;
-            }
-            input[type="submit"]:hover {
-                background-color: #45a049;
-            }
-            .gender-group {
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 15px;
-            }
-            .gender-group input[type="radio"] {
-                margin-right: 5px;
-            }
-        </style>
+       
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-        <div class="form-container">
-            <h1>Student Form</h1>
-            <form action="saveStudent.jsp" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address">
-                
-                <label>Gender:</label>
-                <div class="gender-group">
-                    <label><input type="radio" name="gender" value="Male"> Male</label>
-                    <label><input type="radio" name="gender" value="Female"> Female</label>
-                </div>
-                
-                <label for="subject">Subject:</label>
-                <select id="subject" name="subject">
-                    <option value="Java">Java</option>
-                    <option value="Python">Python</option>
-                    <option value="Gave">Gave</option>
-                    <option value="Networking">Networking</option>
+        <div class="container mt-5">
+            <div class="col-md-4 mx-auto">
+                <h1 class="mb-4 text-center">Student Form</h1>
+                <form action="saveStudent.jsp" method="post">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
                     
-                </select>
-                
-                <input type="submit" value="Save">
-            </form>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input type="text" class="form-control" id="address" name="address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Gender:</label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="gender" value="Male" id="male">
+                            <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="gender" value="Female" id="female">
+                            <label class="form-check-label" for="female">Female</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <select class="form-control" id="subject" name="subject">
+                            <option value="Java">Java</option>
+                            <option value="Python">Python</option>
+                            <option value="Gave">Gave</option>
+                            <option value="Networking">Networking</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-sm btn-block">Save</button>
+                </form>
+            </div>
         </div>
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
 </html>
