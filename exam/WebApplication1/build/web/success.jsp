@@ -9,8 +9,8 @@
     </head>
     <body>
         <div class="container">
-            <h1 style="color: green">Data Save Successful</h1>
-            <%@include file="studentaddform.jsp"%>
+<!--            <h1 style="color: green">Data Save Successful</h1>-->
+            <%@include file="viewallstudent.jsp"%>
         </div>
     </body>
 </html>
