@@ -52,8 +52,8 @@
             <h2> <%= new java.util.Date() %></h2>
         </div>
         <h3>       
-            <a href="studentaddform.jsp">Add Student</a><br>
-            <a href="viewallstudent.jsp">View All Student</a>
+            <a href="studentaddform.jsp">Add Teacher</a><br>
+            <a href="viewallstudent.jsp">View All Teacher</a>
         </h3>
     </div>
      </body>

@@ -12,33 +12,26 @@ import util.DBUtil;
 
 public class StudentDao {
 
-    static PreparedStatement ps;
-    static ResultSet rs;
-    static String sql = "";
-
     public static int saveStudent(Student s) {
-
+        String sql = "insert into student(name, department, gender) values(?,?,?)";
         int status = 0;
 
-        sql = "insert into student(name, email, gender, subject) "
-                + "values(?,?,?,?)";
-
-        try {
-            ps = DBUtil.getCon().prepareStatement(sql);
-
+        try (PreparedStatement ps = DBUtil.getCon().prepareStatement(sql)) {
             ps.setString(1, s.getName());
-            ps.setString(2, s.getEmail());
+            ps.setString(2, s.getDepartment());
             ps.setString(3, s.getGender());
-            ps.setString(4, s.getSubject());
 
             status = ps.executeUpdate();
             System.out.println(status);
 
-            ps.close();
-            DBUtil.getCon().close();
-
         } catch (SQLException ex) {
             Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                DBUtil.getCon().close();
+            } catch (SQLException ex) {
+                Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
         return status;
@@ -46,96 +39,98 @@ public class StudentDao {
 
     public static List<Student> viewAllStudent() {
         List<Student> stList = new ArrayList<>();
+        String sql = "select * from student";
 
-        sql = "select * from student";
-        try {
-            ps = DBUtil.getCon().prepareStatement(sql);
-            rs = ps.executeQuery();
+        try (PreparedStatement ps = DBUtil.getCon().prepareStatement(sql); 
+             ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
                 Student s = new Student(
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getString("email"),
-                        rs.getString("gender"),
-                        rs.getString("subject")
+                        rs.getString("department"),
+                        rs.getString("gender")
                 );
-
                 stList.add(s);
             }
-            rs.close();
-            ps.close();
-            DBUtil.getCon().close();
 
         } catch (SQLException ex) {
             Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                DBUtil.getCon().close();
+            } catch (SQLException ex) {
+                Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         return stList;
-
     }
 
     public static void deleteStudent(Student s) {
-        sql = "delete from student where id=?";
-        try {
-            ps = DBUtil.getCon().prepareStatement(sql);
-            ps.setInt(1, s.getId());
-            ps.executeLargeUpdate();
+        String sql = "delete from student where id=?";
 
-            ps.close();
-            DBUtil.getCon().close();
+        try (PreparedStatement ps = DBUtil.getCon().prepareStatement(sql)) {
+            ps.setInt(1, s.getId());
+            ps.executeUpdate();
 
         } catch (SQLException ex) {
             Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                DBUtil.getCon().close();
+            } catch (SQLException ex) {
+                Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-
     }
 
     public static void updateStudent(Student s) {
-        sql = "update student set name=?,email=?,gender=?,subject=? where id=?";
-        try {
-            ps = DBUtil.getCon().prepareStatement(sql);
+        String sql = "update student set name=?,department=?,gender=? where id=?";
+
+        try (PreparedStatement ps = DBUtil.getCon().prepareStatement(sql)) {
             ps.setString(1, s.getName());
-            ps.setString(2, s.getEmail());
+            ps.setString(2, s.getDepartment());
             ps.setString(3, s.getGender());
-            ps.setString(4, s.getSubject());
-            ps.setInt(5, s.getId());
+            ps.setInt(4, s.getId());
 
             ps.executeUpdate();
 
-            ps.close();
-            DBUtil.getCon().close();
         } catch (SQLException ex) {
             Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                DBUtil.getCon().close();
+            } catch (SQLException ex) {
+                Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
     public static Student getById(int id) {
         Student s = null;
+        String sql = "select * from student where id=?";
 
-        sql = "select * from student where id=?";
-        try {
-            ps = DBUtil.getCon().prepareStatement(sql);
+        try (PreparedStatement ps = DBUtil.getCon().prepareStatement(sql)) {
             ps.setInt(1, id);
-            rs = ps.executeQuery();
-
-            while (rs.next()) {
-                s = new Student(
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("email"),
-                        rs.getString("gender"),
-                        rs.getString("subject")
-                );
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    s = new Student(
+                            rs.getInt("id"),
+                            rs.getString("name"),
+                            rs.getString("department"),
+                            rs.getString("gender")
+                    );
+                }
             }
-            rs.close();
-            ps.close();
-            DBUtil.getCon().close();
-
         } catch (SQLException ex) {
             Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                DBUtil.getCon().close();
+            } catch (SQLException ex) {
+                Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         return s;
-
     }
-
 }
