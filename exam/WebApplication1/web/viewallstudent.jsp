@@ -38,10 +38,10 @@ request.setAttribute("list", list);
                             <td>${s.getDepartment()}</td>
                             <td>${s.getGender()}</td>
                             <td>
-                                <a href="updatestudentform.jsp?id=${s.getId()}" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="updatestudentform.jsp?id=${s.getId()}" >Edit</a>
                             </td>
                             <td>
-                                <a href="deletestudent.jsp?id=${s.getId()}" class="btn btn-sm btn-danger">Delete</a>
+                                <a href="deletestudent.jsp?id=${s.getId()}">Delete</a>
                             </td>
                         </tr>
                     </c:forEach>
