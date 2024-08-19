@@ -13,7 +13,7 @@ import util.DBUtil;
 public class StudentDao {
 
     public static int saveStudent(Student s) {
-        String sql = "insert into student(name, department, gender) values(?,?,?)";
+        String sql = "insert into teacher(name, department, gender) values(?,?,?)";
         int status = 0;
 
         try (PreparedStatement ps = DBUtil.getCon().prepareStatement(sql)) {
@@ -39,7 +39,7 @@ public class StudentDao {
 
     public static List<Student> viewAllStudent() {
         List<Student> stList = new ArrayList<>();
-        String sql = "select * from student";
+        String sql = "select * from teacher";
 
         try (PreparedStatement ps = DBUtil.getCon().prepareStatement(sql); 
              ResultSet rs = ps.executeQuery()) {
@@ -67,7 +67,7 @@ public class StudentDao {
     }
 
     public static void deleteStudent(Student s) {
-        String sql = "delete from student where id=?";
+        String sql = "delete from teacher where id=?";
 
         try (PreparedStatement ps = DBUtil.getCon().prepareStatement(sql)) {
             ps.setInt(1, s.getId());
@@ -85,7 +85,7 @@ public class StudentDao {
     }
 
     public static void updateStudent(Student s) {
-        String sql = "update student set name=?,department=?,gender=? where id=?";
+        String sql = "update teacher set name=?,department=?,gender=? where id=?";
 
         try (PreparedStatement ps = DBUtil.getCon().prepareStatement(sql)) {
             ps.setString(1, s.getName());
@@ -108,7 +108,7 @@ public class StudentDao {
 
     public static Student getById(int id) {
         Student s = null;
-        String sql = "select * from student where id=?";
+        String sql = "select * from teacher where id=?";
 
         try (PreparedStatement ps = DBUtil.getCon().prepareStatement(sql)) {
             ps.setInt(1, id);

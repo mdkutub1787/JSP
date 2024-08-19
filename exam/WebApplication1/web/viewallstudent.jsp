@@ -17,11 +17,10 @@ request.setAttribute("list", list);
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-
         <div class="container mt-5">
             <h2 class="text-center mb-4">Teacher List</h2>
-            <table class="table table-bordered table-striped">
-                <thead class="thead-dark">
+            <table class="table">
+                <thead>
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
@@ -41,7 +40,8 @@ request.setAttribute("list", list);
                             <td>
                                 <a href="updatestudentform.jsp?id=${s.getId()}" class="btn btn-sm btn-warning">Edit</a>
                             </td>
-                            <td> <a href="deletestudent.jsp?id=${s.getId()}" class="btn btn-sm btn-danger" ">Delete</a>
+                            <td>
+                                <a href="deletestudent.jsp?id=${s.getId()}" class="btn btn-sm btn-danger">Delete</a>
                             </td>
                         </tr>
                     </c:forEach>
