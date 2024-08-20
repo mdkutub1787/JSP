@@ -20,16 +20,15 @@ public class StudentDao {
 
         int status = 0;
 
-        sql = "insert into student(name, email, address, gender) "
-                + "values(?,?,?,?)";
+        sql = "insert into student(name,department, gender) "
+                + "values(?,?,?)";
 
         try {
             ps = DBUtil.getCon().prepareStatement(sql);
 
             ps.setString(1, s.getName());
-            ps.setString(2, s.getEmail());
-            ps.setString(3, s.getAddress());
-            ps.setString(4, s.getGender());
+            ps.setString(2, s.getDepartment());
+            ps.setString(3, s.getGender());
 
             status = ps.executeUpdate();
             System.out.println(status);
@@ -56,8 +55,7 @@ public class StudentDao {
                 Student s = new Student(
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getString("email"),
-                        rs.getString("address"),
+                        rs.getString("department"),
                         rs.getString("gender")
                 );
 
@@ -91,14 +89,13 @@ public class StudentDao {
     }
 
     public static void updateStudent(Student s) {
-        sql = "update student set name=?,email=?,address=?,gender=? where id=?";
+        sql = "update student set name=?,department=?,gender=? where id=?";
         try {
             ps = DBUtil.getCon().prepareStatement(sql);
             ps.setString(1, s.getName());
-            ps.setString(2, s.getEmail());
-            ps.setString(3, s.getAddress());
-            ps.setString(4, s.getGender());
-            ps.setInt(5, s.getId());
+            ps.setString(2, s.getDepartment());
+            ps.setString(3, s.getGender());
+            ps.setInt(4, s.getId());
 
             ps.executeUpdate();
 
@@ -122,8 +119,7 @@ public class StudentDao {
                 s = new Student(
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getString("email"),
-                        rs.getString("address"),
+                        rs.getString("department"),
                         rs.getString("gender")
                 );
             }

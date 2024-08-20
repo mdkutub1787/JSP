@@ -9,9 +9,9 @@ import java.util.logging.Logger;
 public class DBUtil {
 
     private static Connection con = null;
-    private static String url = "jdbc:mysql://localhost:3306/jsptest";
+    private static String url = "jdbc:mysql://localhost:3307/jsp";
     private static String user = "root";
-    private static String password = "1234";
+    private static String password = "";
     private static String driver = "com.mysql.cj.jdbc.Driver";
 
     public static Connection getCon() {

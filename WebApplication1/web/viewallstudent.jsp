@@ -13,77 +13,40 @@ request.setAttribute("list", list);
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Student List</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f2f2f2;
-                margin: 0;
-                padding: 20px;
-            }
-            table {
-                width: 100%;
-                border-collapse: collapse;
-                margin-bottom: 20px;
-            }
-            table, th, td {
-                border: 1px solid black;
-            }
-            th, td {
-                padding: 10px;
-                text-align: center;
-            }
-            th {
-                background-color: #4CAF50;
-                color: white;
-            }
-            tr:nth-child(even) {
-                background-color: #f2f2f2;
-            }
-            tr:hover {
-                background-color: #ddd;
-            }
-            a {
-                color: red;
-                text-decoration: none;
-                margin-right: 10px;
-            }
-            a:hover {
-                text-decoration: underline;
-            }
-        </style>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-
-        <table>
-
-            <thead>
-                <tr>
-                    <th colspan="6"><h2>Student List</h2></th>
-                </tr>
-                <tr>                 
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Address</th>
-                    <th>Gender</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <c:forEach var="s" items="${list}">
+        <div class="container mt-5">
+            <h2 class="text-center mb-4">Student List</h2>
+            <table class="table table-bordered table-striped">
+                <thead class="thead-light">
                     <tr>
-                        <td>${s.getId()}</td>
-                        <td>${s.getName()}</td>
-                        <td>${s.getEmail()}</td>
-                        <td>${s.getAddress()}</td>
-                        <td>${s.getGender()}</td>
-                        <td>
-                            <a href="updatestudentform.jsp?id=${s.getId()}" style="color:blueviolet">Edit</a>
-                            <a href="deletestudent.jsp?id=${s.getId()}">Delete</a>
-                        </td>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Gender</th>
+                        <th>Action</th>
                     </tr>
-                </c:forEach>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <c:forEach var="s" items="${list}">
+                        <tr>
+                            <td>${s.getId()}</td>
+                            <td>${s.getName()}</td>
+                            <td>${s.getDepartment()}</td>
+                            <td>${s.getGender()}</td>
+                            <td>
+                                <a href="updatestudentform.jsp?id=${s.getId()}" class="btn btn-info btn-sm">Edit</a>
+                                <a href="deletestudent.jsp?id=${s.getId()}" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
 </html>

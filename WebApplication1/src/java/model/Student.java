@@ -3,28 +3,24 @@ package model;
 
 
 public class Student {
-    
-    private int id;
-    private String name;
-    private String email;
-    private String address;
-    private String gender;
+   private int id;
+private String name;
+private String department;
+private String gender;
 
     public Student() {
     }
 
-    public Student(String name, String email, String address, String gender) {
+    public Student(String name, String department, String gender) {
         this.name = name;
-        this.email = email;
-        this.address = address;
+        this.department = department;
         this.gender = gender;
     }
 
-    public Student(int id, String name, String email, String address, String gender) {
+    public Student(int id, String name, String department, String gender) {
         this.id = id;
         this.name = name;
-        this.email = email;
-        this.address = address;
+        this.department = department;
         this.gender = gender;
     }
 
@@ -44,20 +40,12 @@ public class Student {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDepartment() {
+        return department;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     public String getGender() {
@@ -67,5 +55,6 @@ public class Student {
     public void setGender(String gender) {
         this.gender = gender;
     }
+
 
 }
